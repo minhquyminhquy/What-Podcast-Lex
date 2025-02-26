@@ -1,0 +1,33 @@
+# Node modules and other npm related files
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build directories
+build/
+dist/
+
+# Dependency directories
+.DS_Store
+.vscode/
+.idea/
+
+# Python related files
+__pycache__/
+*.pyc
+
+# Environment variables
+.env
+
+# Vercel specific files
+.vercel
+
+# React specific files
+*.log
+.cache/
+coverage/
+
+# Other
+*.bak
+*.tmp
+*.log

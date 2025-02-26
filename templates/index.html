@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lex Podcast Recommender</title>
+    <style>
+        body { max-width: 800px; margin: 0 auto; padding: 20px; font-family: Arial, sans-serif; }
+        .search-box { width: 100%; padding: 12px; font-size: 16px; margin-bottom: 20px; }
+        .result-item { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .result-title { font-size: 18px; margin-bottom: 5px; }
+        .result-url { color: #006621; font-size: 14px; }
+        .result-desc { color: #545454; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Lex Fridman Podcast Search</h1>
+    <form action="/search" method="get">
+        <input class="search-box" type="text" name="q" 
+               placeholder="Search podcasts (e.g., 'AI ethics', 'Trump policies')" 
+               value="{{ query }}" autofocus>
+    </form>
+
+    {% if results %}
+    <div class="results">
+        {% for result in results %}
+        <div class="result-item">
+            <div class="result-title">
+                <a href="{{ result.url }}" target="_blank">{{ result.title }}</a>
+            </div>
+            <div class="result-url">{{ result.url }}</div>
+            <div class="result-desc">{{ result.description }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>
