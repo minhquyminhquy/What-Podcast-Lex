@@ -10,7 +10,7 @@ CORS(app)
 episodes = load_and_preprocess('podcasts.json')
 vectorizer, tfidf_matrix = create_search_pipeline(episodes)
 
-@app.route('/search')
+@app.route('/api/search')
 def search():
     query = request.args.get('q', '')
     if not query:
